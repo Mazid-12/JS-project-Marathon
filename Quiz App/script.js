@@ -91,9 +91,9 @@ function showQuestion(){
     currentQuestionSpan.textContent = currentQuestionIndex + 1
 
     const progressPercent = (currentQuestionIndex/quizQuestions.length) *100;
-    progressBar.style.width = progress + '%'
+    progressBar.style.width = progressPercent + '%';
 
-    questionText.textContent = currentQuestion.question
+    questionText.textContent = currentQuestion.question;
 
     answersContainer.innerHTML = "";
 
@@ -111,7 +111,7 @@ function showQuestion(){
 }
 
 function selectAnswer(event){
-    if(answerDisabled) return
+    if(answerDisabled) return;
     answerDisabled = true
     const selectedButton = event.target;
     const isCorrect = selectedButton.dataset.correct === "true";
@@ -119,10 +119,10 @@ function selectAnswer(event){
     Array.from(answersContainer.children).forEach(button=>{
         if(button.dataset.correct === "true"){
             button.classList.add("correct");
-
-        }else (button === selectedButton)
-            button.classList.add("incorrect");
         
+        }else if (button === selectedButton){
+            button.classList.add("incorrect");
+        }
     })
     if(isCorrect){
         score++;
@@ -148,7 +148,7 @@ function showResults(){
 
     finalScoreSpan.textContent = score;
 
-    const percentage = (score/quizQuestions) *100
+    const percentage = (score/quizQuestions.length) *100
 
     if(percentage===100){
         resultMessage.textContent = "Perfect! You're a genius!"

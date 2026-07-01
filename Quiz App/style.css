@@ -96,22 +96,25 @@ body{
 
 .progress-bar{
     height: 10px;
-    background-color: bisque;
+    background-color: rgb(231, 204, 170);
     border-radius: 5px;
     overflow: hidden;
     margin-top: 20px;
 }
 
 .progress{
+    height: 100%;
+    background-color: rgb(239, 141, 22);
+    width: 0%;
     transition: width o.3s ease;
 }
 
 #result-screen h1{
-    color: orange;
+    color:rgb(234, 101, 12);
     margin-bottom: 30px;
 }
 
-#result-info{
+.result-info{
     background-color: bisque;
     border-radius: 10px;
     padding: 20px;
@@ -122,25 +125,26 @@ body{
     font-size: 1.2rem;
     color: #333;
     margin-bottom: 1rem;
+    margin-bottom: 30px;
 }
 
 #result-message{
     font-size: 1.5rem;
     font-weight: 600;
-    color: orange;
+    color: rgb(234, 101, 12);
 }
 
 button{
-    background-color: rgb(252, 183, 54);
+    background-color:orange;
     color: white;
     border: none;
     border-radius: 10px;
     padding: 15px 30px;
-    font-size: 1.1rem;
+    font-size: 1.1rem; 
     cursor: pointer;
 
 }
 
 button:hover{
-    background-color: orange;
+    background-color: rgb(247, 100, 2);
 }
