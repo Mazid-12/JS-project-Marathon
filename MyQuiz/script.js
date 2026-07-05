@@ -8,6 +8,9 @@ const currentQuestionIndex = document.getElementById("current-question");
 const totalQuestion = document.getElementById("total-questions");
 const answerContainer = document.getElementById("answer-container");
 const trackerSpot = document.getElementById("tracker");
+const currentScore = document.getElementById("score");
+const finalScore = document.getElementById("final-score");
+const finalMessage = document.getElementById("final-message");
 
 let questionsList = [{
     question: "What is the capital of Germany?",
@@ -47,51 +50,111 @@ let questionsList = [{
         {choice: "Europ", correct: false},
         {choice: "Africa", correct: true},
         {choice: "Asia", correct: false},
-        {choice: "SOuth America", correct: false},
+        {choice: "South America", correct: false},
     ]},
 ]
 
 
 let numberQuestions = questionsList.length;
 let score = 0;
-let questionIndex = 0;
+let questionIndex = 1;
 let trackPercentage = 0;
+
 
 
 startBtn.addEventListener("click", start_quiz);
 
 function start_quiz(){
-
+    score=0;
+    questionIndex=1;
+    trackPercentage=0;
+    currentScore.textContent = score;
     totalQuestion.textContent = numberQuestions;
 
     startScreen.classList.remove("active");
     quizScreen.classList.add("active");
     show_questions();
 }
-
+;
 function show_questions(){
-    questionIndex = 1;
     currentQuestion = questionsList[questionIndex-1];
 
-    trackPercentage = (questionIndex/numberQuestions)*100;
+    trackPercentage = ((questionIndex-1)/numberQuestions)*100;
 
     currentQuestionIndex.textContent = questionIndex;
     questionText.textContent = currentQuestion.question;
 
     trackerSpot.style.width= trackPercentage + '%';
 
+    answerContainer.replaceChildren();
+
     currentQuestion.answers.forEach(answer => {
         const answerButton = document.createElement("button");
         answerButton.textContent = answer.choice;
 
         answerButton.classList.add("answer-choice");
+
+        answerButton.dataset.correct = answer.correct;
+
+        answerButton.addEventListener("click", select_answer);
         answerContainer.appendChild(answerButton);
     });
-        
     
-
-
-
-        
     }
+
+function select_answer(event){
+    const selectedButton = event.target;
+    const isCorrect = selectedButton.dataset.correct ==='true';
+    
+    if(isCorrect){
+        selectedButton.classList.add("correct");
+        score++;
+        currentScore.textContent = score;
+    }
+    else{
+        selectedButton.classList.add("incorrect");
+        Array.from(answerContainer.children).forEach(button =>{
+        if(button.dataset.correct==='true'){
+            button.classList.add("correct");
+        }
+
+        })
+    }
+
+    setTimeout(()=>{
+        questionIndex++
+        if(questionIndex<=numberQuestions){
+            show_questions()
+        }
+        else{
+            end_quiz();
+        }
+    }, 1500)
+
+    function end_quiz(){
+        quizScreen.classList.remove("active");
+        endScreen.classList.add("active");
+
+        finalScore.textContent = score;
+
+        if(score==5){
+            finalMessage.textContent = "Perfect! You're a genius"
+        }else if(score==4){
+            finalMessage.textContent = "Great job! You know your stuff"
+        }else if(score==3){
+            finalMessage.textContent = "Good effort! Keep learning!"
+        }else if (score==2){
+            finalMessage.textContent = "Not bad! Try again to improve"
+        }else{
+            finalMessage.textContent = "Keep studying! You'll get better"
+        }   
+    }
+    restartBtn.addEventListener("click", restart_btn);
+}
+
+function restart_btn(){
+    endScreen.classList.remove("active");
+    quizScreen.classList.add("active");
+    start_quiz()
+}
     

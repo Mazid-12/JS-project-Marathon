@@ -90,6 +90,19 @@ body{
     background-color: rgb(157, 157, 249);
 }
 
+.answer-choice.correct{
+    border: 2px solid green;
+    background-color: rgb(181, 242, 181);
+    color: green
+}
+
+.answer-choice.incorrect{
+    border: 2px solid red;
+    background-color: rgb(250, 207, 207);
+    color: red;
+}
+
+
 
 .tracker-box{
     width: 90%;
