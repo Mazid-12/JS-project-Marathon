@@ -8,30 +8,31 @@
 </head>
 <body>
     <div class="main-container">
-        <div class="screen">
+        <div id="start-screen" class="screen active">
             <h1>MyQUIZZ</h1>
             <p class="start-message">Test your knowledge with our short quiz</p>
-            <button>START QUIZ</button>
+            <button class = "button" id="start-button">START QUIZ</button>
         </div>
-        <div class="screen">
-            <h2>this is where the question is</h2>
+        <div id="quiz-screen" class="screen">
+            <h2 id="question">this is where the question is</h2>
             <div class="quiz-info">
-                <p>Question <span>1</span>/<span>5</span></p>
-                <p>Score: <span>1</span></p>
+                <p>Question <span id="current-question">0</span>/<span id="total-questions">0</span></p>
+                <p>Score: <span>0</span></p>
             </div>
-            <div class="answer-box">This is where the answers are</div>
+            <div id ="answer-container" class="answer-box"></div>
             <div class="tracker-box">
-                <div class="tracker"></div>
+                <div id="tracker"></div>
             </div>
         </div>
-        <div class="screen active">
+        <div id="end-screen" class="screen">
             <h1>Quiz Results</h1>
             <div class="feedback">
                 <p>You scored <span>2</span> out of <span>5</span></p>
                 <h2>Short Message</h2>
             </div>
-            <button>RESTART QUIZ</button>
+            <button class = "button" id="restart-button">RESTART QUIZ</button>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>

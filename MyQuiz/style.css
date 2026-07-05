@@ -41,7 +41,7 @@ body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-button{
+.button{
     margin-bottom: 10px;
     height: 40px;
     width: 130px;
@@ -51,9 +51,11 @@ button{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     transition: 0.3s;
     cursor: pointer;
+    border: 2px solid blue;
+    box-shadow: 3px 3px 8px black;
 }
 
-button:hover{
+.button:hover{
     background-color: blue;
 }
 
@@ -70,17 +72,37 @@ button:hover{
 
 .answer-box{
     margin: 20px;
+    display: flex;
+    flex-direction: column;
 }
+.answer-choice{
+    margin: 2px;
+    height: 40px;
+    font-size: 15px;
+    border-radius: 10px;
+    border: 2px solid blue;
+    background-color:rgb(200, 200, 250);
+    cursor: pointer; 
+    transition: 0.3s;
+}
+
+.answer-choice:hover{
+    background-color: rgb(157, 157, 249);
+}
+
 
 .tracker-box{
     width: 90%;
     margin: 0 auto;
+    border: 1px solid;
+    border-radius: 10px;
+    overflow: hidden;
     
 }
-.tracker{
-    border-radius: 10px;
+#tracker{
+    
     background-color: blue;
-    width: 100%; /*have to change it later*/
+    width: 0%; /*have to change it later*/
     padding: 3px;    
 }
 
