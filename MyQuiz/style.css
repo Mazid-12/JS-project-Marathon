@@ -1,0 +1,104 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(181, 176, 245);
+    
+}
+
+.main-container{
+    width: 80%;
+    max-width: 600px;
+}
+
+.screen{
+    background-color: white;
+    border-radius: 10px;
+    text-align: center;
+    display: none;
+    box-shadow: 5px 5px 20px black;
+    padding: 20px;
+}
+
+.screen.active{
+    display: block; 
+}
+
+.screen h1{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: blue;
+    padding: 10px;
+}
+
+.start-message{
+    margin: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+button{
+    margin-bottom: 10px;
+    height: 40px;
+    width: 130px;
+    border-radius: 8px;
+    background-color: rgb(129, 129, 250);
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: blue;
+}
+
+.screen h2{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-bottom: 10px;
+}
+
+.quiz-info{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.answer-box{
+    margin: 20px;
+}
+
+.tracker-box{
+    width: 90%;
+    margin: 0 auto;
+    
+}
+.tracker{
+    border-radius: 10px;
+    background-color: blue;
+    width: 100%; /*have to change it later*/
+    padding: 3px;    
+}
+
+.feedback{
+    width: 80%;
+    margin: 20px auto;
+    border-radius: 10px;
+    background-color: rgb(223, 237, 242);
+    padding: 10px;
+}
+.feedback h2{
+    margin-top: 10px;
+    color: blue;
+}
+
+
+
+
+
+
+
