@@ -11,46 +11,46 @@
     <div class="main-container">
         <div class="balance">
             <p>YOUR BALANCE</p>
-            <span>$1000</span>
+            <span id="totalBalance">$10</span>
         </div>
         <div class="totals">
             <div>
                 <p>INCOME</p>
-                <span id="income">$100</span>
+                <span id="income">$0</span>
             </div>
             <div>
                 <p>EXPENSE</p>
-                <span id="expense">$100</span>
+                <span id="expense">$0</span>
             </div>
         </div>
         <div id="history">
             <p>History</p>
         </div>
-        <div class="form">
+        <div class="allForm">
             <p>Add new transaction</p>
-            <form>
+            <form id="form">
                 <div class="info">
-                    <label>Type</label>
-                    <select required>
+                    <label for="type">Type</label>
+                    <select id="type" required>
                         <option value="">--Please choose--</option>
-                        <option>Expense</option>
-                        <option>Income</option>
+                        <option value="expense" >Expense</option>
+                        <option value="income">Income</option>
                     </select>
                 </div>
                 
                 <div class="info">
-                    <label>Name</label>
-                    <input type="text" placeholder="Enter the name of the transaction" required/>
+                    <label for="nameTrans">Name</label>
+                    <input type="text" placeholder="Enter the name of the transaction" id="nameTrans" autocomplete="off" required/>
                 </div>
                 <div class="info">
-                    <label>Amount</label>
-                    <input type="text" placeholder="Enter the amount" required/>
+                    <label for="amountTrans">Amount</label>
+                    <input type="text" placeholder="Enter the amount" id="amountTrans" autocomplete="off" required/>
                 </div>
                 <button type="submit" id="button">Add transaction</button>
 
             </form>
         </div>
     </div>
-    
+    <script src="script.js"></script>
 </body>
 </html>
