@@ -4,42 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
     <h1>EXPENSELY - Your expense tracker</h1>
-    <div>
-        <h2>YOUR BALANCE</h2>
-        <span>$1000</span>
-    </div>
-    <div>
-        <div>
-            <h3>INCOME</h3>
-            <span>$100</span>
+    <div class="main-container">
+        <div class="balance">
+            <p>YOUR BALANCE</p>
+            <span>$1000</span>
         </div>
-        <div>
-            <h3>EXPENSE</h3>
-            <span>$100</span>
-        </div>
-    </div>
-    <div>
-        <p>History</p>
-    </div>
-    <div>
-        <p>Add new transaction</p>
-        <form>
-            
+        <div class="totals">
             <div>
-                <label>Name</label>
-                <input type="text" placeholder="Enter the name of the transaction" required/>
+                <p>INCOME</p>
+                <span id="income">$100</span>
             </div>
             <div>
-                <label>Amount</label>
-                <input type="text" placeholder="Enter the amount" required/>
+                <p>EXPENSE</p>
+                <span id="expense">$100</span>
             </div>
-            <button type="submit">Add transaction</button>
+        </div>
+        <div id="history">
+            <p>History</p>
+        </div>
+        <div class="form">
+            <p>Add new transaction</p>
+            <form>
+                <div class="info">
+                    <label>Type</label>
+                    <select required>
+                        <option value="">--Please choose--</option>
+                        <option>Expense</option>
+                        <option>Income</option>
+                    </select>
+                </div>
+                
+                <div class="info">
+                    <label>Name</label>
+                    <input type="text" placeholder="Enter the name of the transaction" required/>
+                </div>
+                <div class="info">
+                    <label>Amount</label>
+                    <input type="text" placeholder="Enter the amount" required/>
+                </div>
+                <button type="submit" id="button">Add transaction</button>
 
-        </form>
+            </form>
+        </div>
     </div>
-
+    
 </body>
 </html>

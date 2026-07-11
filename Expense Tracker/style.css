@@ -1,0 +1,120 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(250, 232, 232);
+    font-family: arial, sans-serif;
+
+}
+
+body h1{
+    width: 100%;
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(10, 10, 123) ;
+    color: white;
+    border: none;
+    font-family: arial, sans-serif;
+    font-size: 1.5rem;
+}
+
+.main-container{
+    margin: 50px;
+    width: 40%;
+    
+}
+
+.balance{
+    font-family: verdana, sans-serif;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.balance span{
+    font-size: 1.5rem;
+}
+
+.totals{
+    height: 5rem;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px rgb(169, 168, 168);
+    margin-bottom: 30px;
+}
+
+.totals p{
+    font-weight: bold;
+}
+
+#income{
+    color: rgb(6, 165, 6);
+}
+#expense{
+    color: red;
+}
+
+#history p{
+    font-weight: bold;
+    border-bottom: 1px solid rgb(182, 177, 177);
+    padding: 5px;
+    margin-bottom: 30px;
+}
+
+.form p{
+    font-weight: bold;
+    border-bottom: 1px solid rgb(182, 177, 177);
+    padding: 5px;
+    margin-bottom: 20px;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 7px;
+}
+
+input {
+    height: 2rem;
+    border: 1px solid rgb(182, 177, 177);
+    border-radius: 7px;
+    margin-bottom: 10px;
+}
+
+select {
+    height: 2rem;
+    border: 1px solid rgb(182, 177, 177);
+    margin-bottom: 10px;
+}
+
+#button{
+    width: 100%;
+    height: 2.5rem;
+    margin-top: 10px;
+    border: none;
+    background-color: rgb(10, 10, 123);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+
+}
+
+#button:hover{
+    transform: scale(1.05)
+}
+
