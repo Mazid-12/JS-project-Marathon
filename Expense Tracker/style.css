@@ -73,7 +73,7 @@ body h1{
     margin-bottom: 10px;
 }
 
-.allForm p{
+.formTitle{
     font-weight: bold;
     border-bottom: 1px solid rgb(182, 177, 177);
     padding: 5px;
@@ -132,4 +132,15 @@ select {
     padding: 10px;
     border-radius: 5px;
     margin-bottom: 10px;
+}
+
+
+.error{
+    color: red;
+    margin-bottom: 10px;
+    display: none;
+}
+
+.error.active{
+    display: block;
 }

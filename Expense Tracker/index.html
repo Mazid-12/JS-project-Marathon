@@ -27,7 +27,7 @@
             <p class="historyTitle">History</p>
         </div>
         <div class="allForm">
-            <p>Add new transaction</p>
+            <p class="formTitle">Add new transaction</p>
             <form id="form">
                 <div class="info">
                     <label for="type">Type</label>
@@ -41,15 +41,17 @@
                 <div class="info">
                     <label for="nameTrans">Name</label>
                     <input type="text" placeholder="Enter the name of the transaction" id="nameTrans" autocomplete="off" required/>
+                    <p class="error">Invalid input</p>
                 </div>
                 <div class="info">
                     <label for="amountTrans">Amount</label>
-                    <input type="text" placeholder="Enter the amount" id="amountTrans" autocomplete="off" required/>
+                    <input type="number" placeholder="Enter the amount" id="amountTrans" autocomplete="off" required/>
+                    <p class="error">Invalid input</p>
                 </div>
                 <button type="submit" id="button">Add transaction</button>
-
+                
             </form>
-        </div>
+        </div
     </div>
     <script src="script.js"></script>
 </body>
