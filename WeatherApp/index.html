@@ -4,17 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My WeatherAPP</title>
+    <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-    <input type="text" placeholder="Enter city">
-    <button type="submit">Get weather</button>
-    <div>
-        <h1>LOME</h1>
-        <p><span>80</span> °C </p>
-        <p>Humity: <span>75</span>%</p>
-        <p>Clear skies</p>
-        <p>Please enter a city</p>
+    <div class="container">
+        <div class="userBox">
+            <input type="text" placeholder="Enter city" id="input">
+            <button type="submit" id="submitBtn">Get weather</button>
+        </div>
+        <div class="info-container">
+            <h1>LOME</h1>
+            <p class="temperature"><span>80</span>°C </p>
+            <p class="humidity">Humity: <span>75</span>%</p>
+            <p class="skyState">Clear skies</p>
+            <p class="weatherEmoji">☀️</p>
+            <p id="errorMe">Please enter a city</p>
+        </div>
     </div>
-
 </body>
 </html>
