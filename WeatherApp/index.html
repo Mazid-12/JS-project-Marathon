@@ -8,18 +8,19 @@
 </head>
 <body>
     <div class="container">
-        <div class="userBox">
+        <form class="userForm">
             <input type="text" placeholder="Enter city" id="input">
             <button type="submit" id="submitBtn">Get weather</button>
-        </div>
-        <div class="info-container">
-            <h1>LOME</h1>
-            <p class="temperature"><span>80</span>°C </p>
-            <p class="humidity">Humity: <span>75</span>%</p>
+        </form>
+        <div class="card">
+            <h1 class="city">LOME</h1>
+            <p class="temperature">80°C </p>
+            <p class="humidity">Humity: 75%</p>
             <p class="skyState">Clear skies</p>
             <p class="weatherEmoji">☀️</p>
-            <p id="errorMe">Please enter a city</p>
+            <p class="errorMessage">Please enter a city</p>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
