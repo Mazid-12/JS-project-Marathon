@@ -1,0 +1,77 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: rgb(246, 236, 224);  
+}
+
+#cityForm{
+    background-color: green;
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+.cityInput{
+    height: 2rem;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    font-family: monospace;
+}
+.button{
+    background-color: rgb(242, 242, 137);
+    transition: 0.3s ease;
+}
+.button:hover{
+    background-color: yellow;
+    transform: scale(1.1);
+}
+
+
+.card{
+    background-image: linear-gradient(to bottom, rgb(154, 154, 251), rgb(166, 255, 166));
+    border-radius: 10px;
+    padding: 30px;
+    font-family: monospace;
+    text-align: center;
+}
+
+.city{
+    font-size: 7rem;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.temperature{
+    font-size: 4rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.humidity{
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.description{
+    font-size: 1.5rem;
+    font-style: italic;
+}
+
+.emoji{
+    font-size: 4rem;
+}
+
+.errorMessage{
+    font-size: 2rem;
+    font-weight: bold;
+}
+

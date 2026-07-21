@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>myWeather</title>
+    <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-    <form>
-        <input type="text" placeholder="Enter your city"/>
-        <button type="submit">Get Weather</button>
+    <form id="cityForm">
+        <input type="text" placeholder="Enter your city" class="cityInput"/>
+        <button type="submit" class="cityInput button">Get Weather</button>
     </form>
     <div class="card">
         <h1 class="city">Miami</h1>
         <p class="temperature">12°C</p>
-        <p class="humdity">Humitdity: 60%</p>
+        <p class="humidity">Humidity: 60%</p>
         <p class="description">Clear skies</p>
         <p class="emoji">☀️</p>
         <p class="errorMessage">Please, enter a city</p>
