@@ -7,29 +7,35 @@ weatherForm.addEventListener("submit", async event =>{
     event.preventDefault();
     city = userInput.value;
     if(city){
-        weatherData = await getWeatherData();
-        //console.log(weatherData);
-        displayWeather(weatherData);
+        try{
+            weatherData = await getWeatherData();
+            displayWeather(weatherData);
+        }
+        catch(error){
+            displayError(error)
+        }
     }
     else{
-        //display error
+        displayError("Please, enter a city")
     }
+    userInput.value = "";
 });
 
 async function getWeatherData(){
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}`;
     const response = await fetch(url);
+    if(!response.ok){
+        throw new Error("Data Not Found!");
+    }
     const weatherData = await response.json();
-
-    //console.log(weatherData);
-    return weatherData
-    
+    return weatherData   
 }
 
 function displayWeather(data){
     console.log(data)
-    const {name: city, main : 
-        {humidity: humidity, temp: temperature}} = data;
+    const {name : city, 
+           main : {humidity: humidity, temp: temperature},
+           weather: [{description: desc}]} = data;
 
     card.textContent = "";
     card.style.display = "block";
@@ -39,26 +45,31 @@ function displayWeather(data){
     const humidityDisplay = document.createElement('p');
     const descDisplay = document.createElement('p');
     const emojiDisplay = document.createElement('p');
-    const errorDisplay = document.createElement('p');
 
     cityDisplay.textContent = city;
     temperatureDisplay.textContent = `${(temperature - 273.15).toFixed(1)} °C`;
     humidityDisplay.textContent = `Humidity: ${humidity}%`
+    descDisplay.textContent = desc;
 
     cityDisplay.classList.add("city");
     temperatureDisplay.classList.add("temperature");
-    humidityDisplay.classList.add("humidity")
-
-
+    humidityDisplay.classList.add("humidity");
+    descDisplay.classList.add("description");
+    
 
     card.appendChild(cityDisplay);
     card.appendChild(temperatureDisplay);
     card.appendChild(humidityDisplay);
-
-
-    
-
-
-
+    card.appendChild(descDisplay);
 
 }
+
+function displayError(message){
+    const errorDisplay = document.createElement('p');
+    errorDisplay.textContent = message;
+    errorDisplay.classList.add('errorMessage')
+    card.textContent = "";
+    card.style.display = "block";
+    card.appendChild(errorDisplay);
+}
+
