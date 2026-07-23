@@ -41,6 +41,7 @@ body{
     padding: 30px;
     font-family: monospace;
     text-align: center;
+    display: none;
 }
 
 .city{
