@@ -41,6 +41,7 @@ body{
     padding: 30px;
     font-family: monospace;
     text-align: center;
+    box-shadow: 0 3px 10px rgb(114, 113, 113);
     display: none;
 }
 
