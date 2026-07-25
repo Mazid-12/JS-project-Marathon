@@ -1,0 +1,74 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    text-align: center;
+    height: 100vh;
+    background-color: rgb(57, 11, 100) ;
+}
+
+
+#input-form{
+    margin: 30px;
+    margin-bottom: 80px;
+}
+
+.user-inter{
+    font-size: 1.5rem;
+    border-radius: 10px;
+    height: 3rem;
+    padding: 5px;
+    border: 3px solid black;
+    box-shadow: 0 3px 3px 5px black;
+    font-family: verdana;
+}
+
+.input{
+    width: 50%;
+    max-width: 500px;
+}
+
+.button{
+    background-color: rgb(0, 255, 4);
+    transition: 0.3s ease-in-out;
+}
+.button:hover{
+    background-color: rgb(8, 202, 12);
+    transform: scale(1.05);
+}
+
+.movie-card{
+    background-color: rgb(80, 15, 141);
+    width: fit-content;
+    margin: 0 auto;
+    border-radius: 20px;
+    color: rgb(242, 238, 238);
+    border: 2px solid grey;
+    box-shadow: 0 8px 5px black;
+}
+
+.poster{
+    width: 300px;
+    margin-top: 10px;
+    border-radius: 20px;
+}
+
+.movie-card h3{
+    margin: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.movie-card p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-bottom: 10px
+}
+
+.movie-card h4{
+    display: inline-flex;
+    font-weight: bold;
+    text-decoration: underline;
+    color: rgb(0, 255, 4);
+}

@@ -4,17 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie Search App</title>
+    <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-    <form>
-        <input type="Search" placeholder="Search for a movie" />
-        <button type="submit">Search</button>
+    <form id="input-form">
+        <input type="Search" placeholder="Search for a movie" class="user-inter input"/>
+        <button type="submit"  class="user-inter button">Search</button>
     </form>
-    <div>
-        <img src="/images/inception.jpg" alt="initial image"/>
+    <div class="movie-card">
+        <img class="poster" src="/images/inception.jpg" alt="initial image"/>
         <h3>2014, Action, Science fiction, Adventure </h3>
-        <p>Directed by: Christopher Nolan</p>
-        <p>Stars: Leonardo DiCaprio, Joseph Gordon-Levitt</p>
+        <h4>Directed by:</h4><p></p> Christopher Nolan</p>
+        <h4>Stars:</h4><p>Leonardo DiCaprio, Joseph Gordon-Levitt</p>
     </div>
 </body>
 </html>
