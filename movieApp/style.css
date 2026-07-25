@@ -65,8 +65,9 @@ body{
 }
 
 .movie-card p{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin-bottom: 10px
+    font-family: monospace;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
 }
 
 .movie-card h4{
@@ -74,4 +75,10 @@ body{
     font-weight: bold;
     text-decoration: underline;
     color: rgb(0, 255, 4);
+    font-size: 1.1rem;
+}
+
+.error{
+    font-size: 1.5rem;
+    padding: 30px;
 }

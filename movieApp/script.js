@@ -6,17 +6,35 @@ const card = document.querySelector(".movie-card");
 form.addEventListener("submit", async event=>{
     event.preventDefault();
     let movie_input = input.value;
-    movie = movie_input.replace(' ', '+').toLowerCase();
-    movie_data = await getMovie(movie);
-    displayMovie(movie_data);
-    console.log(movie_data);
+    if(movie_input){
+        try{
+            movie = movie_input.replace(' ', '+').toLowerCase();
+            movie_data = await getMovie(movie);
+            console.log(movie_data.Response)
+            if(movie_data.Response === 'True'){
+                displayMovie(movie_data);
+            }
+            else{
+                console.log(movie_data)
+                displayError(`Error: ${movie_data.Error}`)
+            }
+        }
+        catch(error){
+            displayError(error.message)
+        }
+    }
+    else{
+        displayError("Please enter a movie title!")
+    }
     
 });
 
 async function getMovie(title){
     const url = `http://www.omdbapi.com/?t=${title}&apikey=cb701f24`
-    const movieData = await fetch(url);
-    return await movieData.json();
+           
+        const movieData = await fetch(url);
+        return await movieData.json();
+    
 }
 
 function displayMovie(movie_data){
@@ -62,4 +80,17 @@ function displayMovie(movie_data){
     card.appendChild(stars);
     card.appendChild(stars_value);
 
+}
+
+function displayError(message){
+    card.style.display = 'block';
+    card.textContent = "";
+
+    const errorMessage = document.createElement('p');
+    errorMessage.classList.add("error");
+    
+    errorMessage.textContent = message
+
+    card.appendChild(errorMessage);
+    
 }
