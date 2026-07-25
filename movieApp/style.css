@@ -34,6 +34,7 @@ body{
 .button{
     background-color: rgb(0, 255, 4);
     transition: 0.3s ease-in-out;
+    cursor: pointer;
 }
 .button:hover{
     background-color: rgb(8, 202, 12);
@@ -43,11 +44,13 @@ body{
 .movie-card{
     background-color: rgb(80, 15, 141);
     width: fit-content;
+    max-width: 500px;
     margin: 0 auto;
     border-radius: 20px;
     color: rgb(242, 238, 238);
     border: 2px solid grey;
     box-shadow: 0 8px 5px black;
+    display: none;
 }
 
 .poster{
