@@ -2,33 +2,39 @@ const form = document.querySelector("#input-form");
 const input = document.querySelector(".input");
 const card = document.querySelector(".movie-card");
 const searchBox = document.querySelector(".search-list-box")
+let timer = null;
 
 form.addEventListener("submit", async event=>{
     event.preventDefault();
-    searchBox.style.display = 'none';
+    console.log(event);
     let movie_input = input.value;
     if(movie_input){
-        try{
-            movie = movie_input.replace(' ', '+').toLowerCase();
-            movie_data = await getMovie(movie);
-            console.log(movie_data.Response)
-            if(movie_data.Response === 'True'){
-                displayMovie(movie_data);
-            }
-            else{
-                console.log(movie_data)
-                displayError(`Error: ${movie_data.Error}`)
-            }
-        }
-        catch(error){
-            displayError(error.message)
-        }
+        analyseMovie(movie_input)
     }
     else{
         displayError("Please enter a movie title!")
     }
     
 });
+
+async function analyseMovie(movie_input) {
+    searchBox.style.display = 'none';
+    try{
+        movie = movie_input.replace(' ', '+').toLowerCase();
+        movie_data = await getMovie(movie);
+        if(movie_data.Response === 'True'){
+            displayMovie(movie_data);
+        }
+        else{
+            console.log(movie_data)
+            displayError(`Error: ${movie_data.Error}`)
+        }
+    }
+    catch(error){
+        displayError(error.message)
+    }
+}
+
 
 async function getMovie(title){
     const url = `http://www.omdbapi.com/?t=${title}&apikey=cb701f24`
@@ -96,9 +102,10 @@ function displayError(message){
     
 }
 
+
+
 input.addEventListener('input', event=>{
-    let timer = 0;
-    clearTimeout(timer)
+    clearTimeout(timer);
     timer = setTimeout(async ()=>{
         search_data = await searchMovie(input.value)
         if(search_data.Response === 'True'){
@@ -112,11 +119,15 @@ input.addEventListener('input', event=>{
     }, 1000)
 })
 
+
+
 async function searchMovie(term){
     const url = `http://www.omdbapi.com/?s=${term}&apikey=cb701f24`;
     const data = await fetch(url);
     return await data.json();
 }
+
+
 
 function displaySearch(searchData){
     const {
@@ -136,21 +147,26 @@ function displaySearch(searchData){
             
             const {Title: search_title,
                    Poster: search_poster} = data;
-            const movieBox = document.createElement('div');
+            const movieBox = document.createElement('button');
             const searchPoster = document.createElement('img');
             const searchTitle = document.createElement('p');
 
             movieBox.classList.add('search-movie');
-            searchPoster.setAttribute('src', searchPoster);
+            movieBox.type = 'sumbit';
+            searchPoster.setAttribute('src', search_poster);
             searchPoster.setAttribute('alt', 'not found');
             searchTitle.textContent = search_title;
+            movieBox.dataset.title = search_title;
 
-            searchPoster.classList.add('.search-poster');
+            searchPoster.classList.add('search-poster');
 
             movieBox.appendChild(searchPoster);
             movieBox.appendChild(searchTitle);
             searchBox.appendChild(movieBox);
 
+            movieBox.addEventListener('click', ()=>{
+                analyseMovie(movieBox.dataset.title);
+            })
         });
 }
 

@@ -94,19 +94,24 @@ body{
     height: 600px;
     border: 5px solid black;
     margin: 0 auto;
-    display: block;
-    padding: 10px;
+    display: none;
+    padding: 0;
     overflow-y: auto;
 }
 
 .search-movie{
     background-color:rgb(80, 15, 141);
+    width: 100%;
     margin-bottom: 5px;
     display: flex;
     align-items: center;
     gap: 20px;
+    cursor: pointer;
     border: 2px solid rgb(112, 26, 193) ;
     
+}
+.search-movie:hover{
+    background-color: rgb(122, 47, 192);
 }
 .search-list-box h1{
     margin-bottom: 20px;
