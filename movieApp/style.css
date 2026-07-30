@@ -8,12 +8,12 @@ body{
     text-align: center;
     height: 100vh;
     background-color: rgb(57, 11, 100) ;
+    padding: 30px;
 }
 
 
 #input-form{
-    margin: 30px;
-    margin-bottom: 80px;
+    margin: 10px;
 }
 
 .user-inter{
@@ -45,6 +45,7 @@ body{
     background-color: rgb(80, 15, 141);
     width: fit-content;
     max-width: 500px;
+    min-width: 500px;
     margin: 0 auto;
     border-radius: 20px;
     color: rgb(242, 238, 238);
@@ -81,4 +82,46 @@ body{
 .error{
     font-size: 1.5rem;
     padding: 30px;
+}
+
+.search-list-box{
+    position: absolute;
+    right: 5px;
+    left: 5px;
+    background-color:rgba(98, 29, 162, 0.8);
+    color: white;
+    max-width: 30%;
+    height: 600px;
+    border: 5px solid black;
+    margin: 0 auto;
+    display: block;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.search-movie{
+    background-color:rgb(80, 15, 141);
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border: 2px solid rgb(112, 26, 193) ;
+    
+}
+.search-list-box h1{
+    margin-bottom: 20px;
+    background-color: rgb(80, 15, 141);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.search-movie img{
+    height: 5rem;
+    margin: 3px;
+}
+
+.search-movie p{
+    color: white;
+    font-size: 1.5rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
 }

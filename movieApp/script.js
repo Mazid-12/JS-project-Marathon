@@ -1,10 +1,11 @@
 const form = document.querySelector("#input-form");
 const input = document.querySelector(".input");
 const card = document.querySelector(".movie-card");
-
+const searchBox = document.querySelector(".search-list-box")
 
 form.addEventListener("submit", async event=>{
     event.preventDefault();
+    searchBox.style.display = 'none';
     let movie_input = input.value;
     if(movie_input){
         try{
@@ -92,5 +93,67 @@ function displayError(message){
     errorMessage.textContent = message
 
     card.appendChild(errorMessage);
+    
+}
+
+input.addEventListener('input', event=>{
+    let timer = 0;
+    clearTimeout(timer)
+    timer = setTimeout(async ()=>{
+        search_data = await searchMovie(input.value)
+        if(search_data.Response === 'True'){
+            displaySearch(search_data)
+        }
+        else{
+            displaySearchError(search_data)
+            console.log("t")
+        }
+        
+    }, 1000)
+})
+
+async function searchMovie(term){
+    const url = `http://www.omdbapi.com/?s=${term}&apikey=cb701f24`;
+    const data = await fetch(url);
+    return await data.json();
+}
+
+function displaySearch(searchData){
+    const {
+        Search: search_list,
+        totalResults: search_total} = searchData;
+        console.log(search_total);
+
+        searchBox.style.display = "block";
+        searchBox.textContent = "";
+
+        const heading = document.createElement('h1');
+        heading.textContent = `MOVIES (${search_total}) - VIEW ALL:`;
+        searchBox.appendChild(heading);
+
+        search_list.forEach(async movie => {
+            const data = await getMovie(movie.Title);
+            
+            const {Title: search_title,
+                   Poster: search_poster} = data;
+            const movieBox = document.createElement('div');
+            const searchPoster = document.createElement('img');
+            const searchTitle = document.createElement('p');
+
+            movieBox.classList.add('search-movie');
+            searchPoster.setAttribute('src', searchPoster);
+            searchPoster.setAttribute('alt', 'not found');
+            searchTitle.textContent = search_title;
+
+            searchPoster.classList.add('.search-poster');
+
+            movieBox.appendChild(searchPoster);
+            movieBox.appendChild(searchTitle);
+            searchBox.appendChild(movieBox);
+
+        });
+}
+
+function displaySearchError(){
     
 }
