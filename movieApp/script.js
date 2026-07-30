@@ -65,7 +65,9 @@ function displayMovie(movie_data){
     const stars = document.createElement("h4");
     const stars_value = document.createElement("p");
 
-
+    poster.addEventListener('error', ()=>{
+        poster.setAttribute('src',"images/errorPoster.png");
+    });
     poster.setAttribute('src', movie_poster);
     poster.setAttribute('alt', 'Movie Poster');
     basic_info.textContent = `${movie_year}, ${movie_genre}`
@@ -153,6 +155,10 @@ function displaySearch(searchData){
 
             movieBox.classList.add('search-movie');
             movieBox.type = 'sumbit';
+
+            searchPoster.addEventListener('error', ()=>{
+                searchPoster.setAttribute('src',"images/errorPoster.png");
+            });
             searchPoster.setAttribute('src', search_poster);
             searchPoster.setAttribute('alt', 'not found');
             searchTitle.textContent = search_title;
