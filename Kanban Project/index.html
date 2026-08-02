@@ -4,24 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kanban Project</title>
+    <link href="style.css" rel="stylesheet"/>
 </head>
 <body>
-    <div>
+    <div class="container">
         <h1>KanBan To-Do App</h1>
-        <div>
-            <h2>To Do</h2>
-            <div draggable="true">Go to school</div>
-            <div draggable="true">Clean room</div>
+        <div class="board">
+            <div class="list" id="list1">
+                <h2>To Do</h2>
+                <div class='card' id="card1" draggable="true">Go to school</div>
+                <div class='card' id="card2" draggable="true">Clean room</div>
+            </div>
+            <div class="list" id="list2">
+                <h2>In progress</h2>
+                <div class='card' id="card3" draggable="true">Learn to code</div>
+            </div>
+            <div class="list" id="list3">
+                <h2>Done</h2>
+                <div class='card' id="card4" draggable="true">Go to work</div>
+            </div> 
         </div>
-        <div>
-            <h2>In Progress</h2>
-            <div draggable="true">write some code</div>
-            <div draggable="true">call grand-parents</div>
-        </div>
-        <div>
-            <h2>Done</h2>
-            <div draggable="true">Do groceries</div>
-        </div>
-    </div>
+    <script src="script.js"></script>
 </body>
 </html>
