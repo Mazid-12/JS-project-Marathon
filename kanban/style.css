@@ -58,14 +58,26 @@ h1{
     margin-bottom: 5px;
     cursor: grab;
     box-shadow: 0 2px 2px 2px rgba(0,0,1,0.2);
-    transition: transform 0.2s;
+    transition: transform 0.2s box-shadow 0.2s;
 }
 
 .task:active{
     transform: scale(1.05);
-    cursor: grabbing;
+    box-shadow: 0 2px 2px 3px rgba(0,0,1,0.2);
+    cursor: grabbing
 }
 
 .list.change{
     background-color: rgb(169, 169, 252);
+}
+
+@media(max-width: 800px){
+    .card{
+        flex-direction: column;
+        align-items: center;
+    }
+    .list{
+        width: 80%;
+        margin-bottom: 30px;
+    }
 }
