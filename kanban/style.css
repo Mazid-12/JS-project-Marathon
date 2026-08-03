@@ -1,0 +1,71 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    align-items: center;
+    background-color: rgb(237, 237, 247);
+}
+
+.container{
+    text-align: center;
+    width: 100%;
+
+}
+
+h1{
+    font-family: sans-serif;
+    margin-bottom: 25px;
+    font-size: 2.5rem;
+}
+
+.card{
+    display: flex;
+    justify-content: space-around;
+    font-family: sans-serif;
+}
+
+.card h2{
+    font-size: 2rem;
+    padding: 5px;
+    margin-bottom: 10px;
+    color: rgb(55, 55, 55);
+}
+
+.list{
+    background-color: rgb(196, 196, 245);
+    width: 30%;
+    height: 500px;
+    border-radius: 10px;
+    box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.task{
+    background-color: white;
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 8px;
+    height: 3rem;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+    cursor: grab;
+    box-shadow: 0 2px 2px 2px rgba(0,0,1,0.2);
+    transition: transform 0.2s;
+}
+
+.task:active{
+    transform: scale(1.05);
+    cursor: grabbing;
+}
+
+.list.change{
+    background-color: rgb(169, 169, 252);
+}
