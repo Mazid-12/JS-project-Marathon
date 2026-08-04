@@ -1,12 +1,9 @@
-const tasks = document.querySelectorAll('.task');
 const lists = document.querySelectorAll('.list');
 const addButton = document.querySelector('.addTask');
 const taskForm = document.querySelector('.saveTask');
 const saveCard = document.querySelector('.saveCard')
 const container = document.querySelector('.container');
 const cancelBtn = document.querySelector('.cancelBtn');
-
-console.log('New')
 
 for(const list of lists){
     list.addEventListener('pointerdown', event=>{
