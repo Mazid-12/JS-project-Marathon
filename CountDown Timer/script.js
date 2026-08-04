@@ -2,6 +2,7 @@ const counter = document.getElementById("counter");
 const startBtn = document.getElementById("startBtn");
 const stopBtn = document.getElementById("stopBtn");
 const resetBtn = document.getElementById("resetBtn");
+const myAudio = document.getElementById("endSound")
 
 let elapsedTime = 0;
 let startTime = 0;
@@ -32,7 +33,7 @@ function stop(){
 function reset(){
     clearInterval(timer);
     elapsedTime = 0;
-    counter.textContent = "02:00";  
+    counter.textContent = "10:00";  
     isRunning = false;
 
 }
@@ -41,12 +42,13 @@ function update_time(){
     currentTime = Date.now();
     elapsedTime = currentTime - startTime;
 
-    let minutes = Math.floor(2 - (elapsedTime/(1000* 60)));
-    let seconds =  Math.floor((2 * 60 - (elapsedTime/1000))% 60);
+    let minutes = Math.floor(10 - (elapsedTime/(1000* 60)));
+    let seconds =  Math.floor((10 * 60 - (elapsedTime/1000))% 60);
 
     if(minutes === 0 && seconds === 0){
         stop();
         elapsedTime = 0;
+        myAudio.play();
     }
 
     minutes = String(minutes).padStart(2, "0");

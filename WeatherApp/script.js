@@ -35,7 +35,6 @@ async function  getWeatherData(city) {
 
     return await response.json();
 }
-
 function displayWeatherInfo(data){
     const {name : city,
            main: {temp, humidity}, 
@@ -71,7 +70,6 @@ function displayWeatherInfo(data){
     card.appendChild(weatherEmoji);
 
 }
-
 function getWeatherEmoji(weatherId){
     switch(true){
         case (weatherId >= 200 && weatherId <300):
@@ -93,7 +91,6 @@ function getWeatherEmoji(weatherId){
         
     }
 }
-
 function displayError(message){
     const errorDisplay = document.createElement('p');
     errorDisplay.textContent = message;
@@ -101,7 +98,5 @@ function displayError(message){
 
     card.textContent = "";
     card.style.display = "flex";
-    card.appendChild(errorDisplay);
-
-    
+    card.appendChild(errorDisplay); 
 }
