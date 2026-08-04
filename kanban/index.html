@@ -7,6 +7,15 @@
     <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
+    <div class="saveCard hidden">
+        <button type="reset" class="cancelBtn">X</button>
+        <form class="saveTask">
+            <label>Task title</label>
+            <input type="text" placeholder="What needs to be done?" id="taskInput"/>
+            <button type="submit" class="submitBtn">Save Task</button>
+        </form>
+    </div>
+        </form>
     <div class="container">
         <h1>KanBan App</h1>
         <div class="card">
@@ -14,8 +23,9 @@
                 <h2>To Do</h2>
                 <div class="task" draggable="true" id="task1">Clean the room</div>
                 <div class="task" draggable="true" id="task2">Go to library</div>
+                <button type="submit" class="addTask">+</button>
             </div>
-            <div class="list">
+            <div class="list list2">
                 <h2>In Progress</h2>
                 <div class="task" draggable="true" id="task3">Call grand-parents</div>
             </div>
